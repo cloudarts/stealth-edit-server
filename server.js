@@ -44,7 +44,7 @@ app.get('/loadLevel/:levelID', function(req, res) {
 	});
 });
 
-app.get('/loadLevel', function(req, res) {
+app.get('/loadLevels', function(req, res) {
 	console.log("************\nattempting to load all levels");
 	var levels = [];
 	levels.push( JSON.parse( fs.readFileSync("E1M1") ) );
