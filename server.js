@@ -44,5 +44,34 @@ app.get('/loadLevel/:levelID', function(req, res) {
 	});
 });
 
+app.get('/loadLevel', function(req, res) {
+	console.log("************\nattempting to load all levels");
+	var levels = [];
+	levels.push( JSON.parse( fs.readFileSync("E1M1") ) );
+	levels.push( JSON.parse( fs.readFileSync("E1M2") ) );
+	levels.push( JSON.parse( fs.readFileSync("E1M3") ) );
+	levels.push( JSON.parse( fs.readFileSync("E1M4") ) );
+	res.send(levels);
+});
+/*
+app.get('/*', function(req, res){
+	var body = 'Hello World';
+	res.end(body);
+});
+*});	
+/*
+app.get('/*', function(req, res){
+	var body = 'Hello World';
+	res.end(body);
+});
+*levels.push(JSON.parse(fs.readFileSync("E1M1")));
+});
+/*
+app.get('/*', function(req, res){
+	var body = 'Hello World';
+	res.end(body);
+});
+*/
+
 app.listen(88);
 console.log("\nserver running on port 88\n\n");
