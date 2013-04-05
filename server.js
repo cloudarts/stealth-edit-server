@@ -5,6 +5,7 @@ var util = require('util');
 
 app.use(require('connect').bodyParser());
 
+app.use("/", express.static(__dirname + '/'));
 
 app.post('/saveLevel', function(req, res){
   	var levelObject = req.body;
@@ -51,6 +52,7 @@ app.get('/loadLevels', function(req, res) {
 	levels.push( JSON.parse( fs.readFileSync("E1M2") ) );
 	levels.push( JSON.parse( fs.readFileSync("E1M3") ) );
 	levels.push( JSON.parse( fs.readFileSync("E1M4") ) );
+    levels.push( JSON.parse( fs.readFileSync("E1M5") ) );
 	res.send(levels);
 });
 /*
