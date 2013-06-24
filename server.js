@@ -53,7 +53,8 @@ app.get('/loadLevels', function(req, res) {
 	levels.push( JSON.parse( fs.readFileSync("E1M3") ) );
 	levels.push( JSON.parse( fs.readFileSync("E1M4") ) );
     levels.push( JSON.parse( fs.readFileSync("E1M5") ) );
-	res.send(levels);
+	levels.push( JSON.parse( fs.readFileSync("E1M6") ) );
+    res.send(levels);
 });
 /*
 app.get('/*', function(req, res){
